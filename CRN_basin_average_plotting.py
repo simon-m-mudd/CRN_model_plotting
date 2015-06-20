@@ -25,8 +25,9 @@ def CRN_model_plotting():
     # Read the data
     #
     ########################
-    DataDirectory = "C://basin_data//Model_results//"
-    FilePrefix = "CRNvariable_short_0_0_1var"
+    DataDirectory = "C://basin_data//Model_results//June2015_results//HighK//ER_metadata//"
+    #DataDirectory = "C://basin_data//Model_results//June2015_results//HighK//ER_metadata//"
+    FilePrefix = "CRNVF_long_HighK_0_0_1var"
     FileName = FilePrefix+".er_frame_metadata"
     
     
@@ -153,7 +154,8 @@ def CRN_model_plotting():
     #pp.ylim(0,1)
 
     figname = FilePrefix+"_forcing.svg"
-    pp.savefig(figname, format='svg')       
+    pp.savefig(figname, format='svg')
+    #pp.show()       
         
 if __name__ == "__main__":
     CRN_model_plotting()         
