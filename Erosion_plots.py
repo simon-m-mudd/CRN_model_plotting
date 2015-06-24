@@ -59,9 +59,17 @@ def Erosion_plots(DataDirectory,file_prefix,metadata_prefix,time_slice,variation
     
     ThisFile = DataDirectory+DataPrefix
 
-
-    tcmap = 'jet'
+    # The colour map is a topic of some debate. Here I have chosen to use a 
+    # diverging colourmap since I wanted to show clearly the areas with erosion above 
+    # and below the mean. The mean is 0.2 mm/yr. 
+    # The seismic colour map has more colour saturation near the mean values
+    # so it is a bit easier to see variation in the colours for the variable
+    # K and D plots, even though they vary much less than the variable U plots
+    tcmap = 'seismic'
     clim_label = "Erosion rate in mm/yr"
+    
+    # This ensures the colouring is centred on the mean value and has the same
+    # range across all values. 
     clim_val = (0.0,0.4)
     DensityPlotErosion(ThisFile,tcmap,clim_label,clim_val,ThisUplift)
     #LSDmt.DrapedPlot(ThisFile,DrapeFile)
@@ -70,7 +78,10 @@ def Erosion_plots(DataDirectory,file_prefix,metadata_prefix,time_slice,variation
 #==============================================================================
 def DensityPlotErosion(FileName, thiscmap='gray',colorbarlabel='Elevation in meters',clim_val = (0,0), uplift_rate = 0):
     
-    # extract the relevant filename information    
+    # extract the relevant filename information  
+    
+    # note this splitting will depend on the operating system
+    # '/' is for Linux and '//' is for windows
     split_fname = FileName.split('//')
     no_tree_levs = len(split_fname) 
     this_fname = split_fname[no_tree_levs-1]  
@@ -174,9 +185,18 @@ def DensityPlotErosion(FileName, thiscmap='gray',colorbarlabel='Elevation in met
 
 if __name__ == "__main__":
 
+    # For the Manuscript I was working in Windows, so the folder seperations
+    # Are `//`. If you work in Linux these van be changed to '\'. 
     DataDirectory = "C://basin_data//Model_results//June2015_Results//HighK//Select_slices//" 
     FilenamePrefix = "CRNVF_long_HighK_"
     metadata_prefix = "CRNVF_long_HighK_"
-    time_slice = 199
-    variation_flags = (0,1,1)
+    
+    # Time slices used in paper are 199, 212, 224 and 237 corresponding
+    # to 400, 425, 450 and 475 kyr    
+    time_slice = 237
+    
+    # Variation flag (1,0,0) is for uplift variation
+    # (0,1,1) is both K and D variability. 
+    # (0,1,0) would be for K only, and (0,0,1) woudl be for D only
+    variation_flags = (1,0,0)
     Erosion_plots(DataDirectory,FilenamePrefix,metadata_prefix,time_slice,variation_flags)
