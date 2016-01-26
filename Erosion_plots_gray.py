@@ -57,7 +57,7 @@ def Erosion_plots(DataDirectory,file_prefix,metadata_prefix,time_slice,variation
     DataPrefix = DataPrefix+"var"+str(time_slice)+"_erosion.asc"
     print "The data prefix is: " + DataPrefix
     
-    ThisFile = DataDirectory+DataPrefix+"_gray"
+    ThisFile = DataDirectory+DataPrefix
 
     # The colour map is a topic of some debate. Here I have chosen to use a 
     # diverging colourmap since I wanted to show clearly the areas with erosion above 
@@ -176,7 +176,7 @@ def DensityPlotErosion(FileName, thiscmap='gray',colorbarlabel='Elevation in met
     #set the file format
     fformat = 'svg'      
 
-    figname = "Spatial"+FilePrefix+"."
+    figname = "Spatial"+FilePrefix+"_gray."
     figname = figname+fformat
     print "The figure name is: "+figname
     plt.savefig(figname, format=fformat) 
