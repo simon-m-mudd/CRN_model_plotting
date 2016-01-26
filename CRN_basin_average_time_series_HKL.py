@@ -140,7 +140,10 @@ def CRN_model_timeseries(dirname):
       fformat = 'svg'      
 
       figname = FilePrefix+"_erosion_v2."
+      
       figname = figname+fformat
+      print "========================================="
+      print figname
       pp.savefig(figname, format=fformat)  
    
         

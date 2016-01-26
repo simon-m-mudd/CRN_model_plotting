@@ -180,7 +180,7 @@ def DensityPlotErosion(FileName, thiscmap='gray',colorbarlabel='Elevation in met
     figname = figname+fformat
     print "The figure name is: "+figname
     plt.savefig(figname, format=fformat) 
-    plt.clf
+    plt.close("all")
 
 #==============================================================================
 
@@ -201,3 +201,74 @@ if __name__ == "__main__":
     # (0,1,0) would be for K only, and (0,0,1) woudl be for D only
     variation_flags = (1,0,0)
     Erosion_plots(DataDirectory,FilenamePrefix,metadata_prefix,time_slice,variation_flags)
+    
+    # Time slices used in paper are 199, 212, 224 and 237 corresponding
+    # to 400, 425, 450 and 475 kyr    
+    time_slice = 224
+    
+    # Variation flag (1,0,0) is for uplift variation
+    # (0,1,1) is both K and D variability. 
+    # (0,1,0) would be for K only, and (0,0,1) woudl be for D only
+    variation_flags = (1,0,0)
+    Erosion_plots(DataDirectory,FilenamePrefix,metadata_prefix,time_slice,variation_flags)    
+    
+    # Time slices used in paper are 199, 212, 224 and 237 corresponding
+    # to 400, 425, 450 and 475 kyr    
+    time_slice = 212
+    
+    # Variation flag (1,0,0) is for uplift variation
+    # (0,1,1) is both K and D variability. 
+    # (0,1,0) would be for K only, and (0,0,1) woudl be for D only
+    variation_flags = (1,0,0)
+    Erosion_plots(DataDirectory,FilenamePrefix,metadata_prefix,time_slice,variation_flags)      
+    
+    # Time slices used in paper are 199, 212, 224 and 237 corresponding
+    # to 400, 425, 450 and 475 kyr    
+    time_slice = 199
+    
+    # Variation flag (1,0,0) is for uplift variation
+    # (0,1,1) is both K and D variability. 
+    # (0,1,0) would be for K only, and (0,0,1) woudl be for D only
+    variation_flags = (1,0,0)
+    Erosion_plots(DataDirectory,FilenamePrefix,metadata_prefix,time_slice,variation_flags)     
+    
+    # Time slices used in paper are 199, 212, 224 and 237 corresponding
+    # to 400, 425, 450 and 475 kyr    
+    time_slice = 237
+    
+    # Variation flag (1,0,0) is for uplift variation
+    # (0,1,1) is both K and D variability. 
+    # (0,1,0) would be for K only, and (0,0,1) woudl be for D only
+    variation_flags = (0,1,1)
+    Erosion_plots(DataDirectory,FilenamePrefix,metadata_prefix,time_slice,variation_flags)
+    
+    # Time slices used in paper are 199, 212, 224 and 237 corresponding
+    # to 400, 425, 450 and 475 kyr    
+    time_slice = 224
+    
+    # Variation flag (1,0,0) is for uplift variation
+    # (0,1,1) is both K and D variability. 
+    # (0,1,0) would be for K only, and (0,0,1) woudl be for D only
+    variation_flags = (0,1,1)
+    Erosion_plots(DataDirectory,FilenamePrefix,metadata_prefix,time_slice,variation_flags)    
+    
+    # Time slices used in paper are 199, 212, 224 and 237 corresponding
+    # to 400, 425, 450 and 475 kyr    
+    time_slice = 212
+    
+    # Variation flag (1,0,0) is for uplift variation
+    # (0,1,1) is both K and D variability. 
+    # (0,1,0) would be for K only, and (0,0,1) woudl be for D only
+    variation_flags = (0,1,1)
+    Erosion_plots(DataDirectory,FilenamePrefix,metadata_prefix,time_slice,variation_flags)      
+    
+    # Time slices used in paper are 199, 212, 224 and 237 corresponding
+    # to 400, 425, 450 and 475 kyr    
+    time_slice = 199
+    
+    # Variation flag (1,0,0) is for uplift variation
+    # (0,1,1) is both K and D variability. 
+    # (0,1,0) would be for K only, and (0,0,1) woudl be for D only
+    variation_flags = (0,1,1)
+    Erosion_plots(DataDirectory,FilenamePrefix,metadata_prefix,time_slice,variation_flags)         
+    
