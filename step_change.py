@@ -195,11 +195,11 @@ def step_change_plot(lambda1,lambda2,t_vec):
     #plt.show()       
     Fileformat = "svg"
     plt.savefig("Erate_change.svg",format = Fileformat)
-    #plt.show()    
+    plt.show()    
 
 if __name__ == "__main__":
     lambda1 = 121.0*(10**-6)
-    lambda2 = 456*(10**-9)
+    lambda2 = 500*(10**-9)
     Gamma = 160.0
     log_t_vec = np.linspace(2.0,6.0,1000)
     t_vec = np.power(10,log_t_vec)

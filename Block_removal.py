@@ -185,11 +185,11 @@ def block_removal_plot(lambda1,lambda2,t_vec):
     #plt.show()       
     Fileformat = "svg"
     plt.savefig("Step_change.svg",format = Fileformat)
-    #plt.show()    
+    plt.show()    
 
 if __name__ == "__main__":
     lambda1 = 121.0*(10**-6)
-    lambda2 = 456*(10**-9)
+    lambda2 = 500*(10**-9)
     Gamma = 160.0
     #t_vec = [500, 5000]
     
